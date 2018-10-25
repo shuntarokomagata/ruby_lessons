@@ -1,0 +1,20 @@
+<h1>記事詳細</h1>
+<div class="container">
+    <div class="article">
+      
+      <div class="title">
+      	<%= @article.first.title %>		
+      </div>
+
+      <div class="text">
+      	<%= @article.first.text %>
+      </div>
+      
+      <div class="comment">
+        <% @comment.first.id.each do |comment|%>
+          <p><%= comment.text %></p>
+        <% end -%>
+      </div>
+
+    </div>
+</div>

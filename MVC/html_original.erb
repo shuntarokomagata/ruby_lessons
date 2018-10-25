@@ -1,0 +1,22 @@
+<h1>記事詳細</h1>
+<div class="container">
+    <div class="article">
+      <div class="title"><%= Article.where(user_id: @user.id).first.title %></div>
+      <div class="text">
+      	
+      	<%= Article.where(user_id: @user.id ).first.text %>
+      		
+
+      	</div>
+      <div class="comment">
+        <% Comment.where(article_id: Article.where(user_id: @user.id).first.id).each do |comment|%>
+          <p><%= comment.text %></p>
+        <% end -%>
+      </div>
+    </div>
+</div>
+
+
+
+
+
